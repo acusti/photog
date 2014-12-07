@@ -17,11 +17,59 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        // If logged in user, show main app UI
+        self.setupParse(launchOptions)
         
-        // Else, show UI for logging in or registering
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        var navigationController = UINavigationController()
+        var startViewController  = StartViewController(nibName: "StartViewController", bundle: nil)
+        
+        if PFUser.currentUser() == nil {
+            navigationController.viewControllers = [startViewController]
+        }
+        else {
+            // TODO: show UI for main app page
+            println("Why hello, user")
+        }
+
+        var viewController = UIViewController()
+
+        navigationController.viewControllers.insert(viewController, atIndex: 0)
+        
+        self.window!.rootViewController = navigationController
+        self.window!.makeKeyAndVisible()
         
         return true
+    }
+    func setupParse(launchOptions: [NSObject: AnyObject]?) {
+        // Initialize Parse framework
+        Parse.setApplicationId(
+            "CmM4mSRfTMrsVWRGoztQbyvH2smgalIOwMuobS9W",
+            clientKey: "KG5IyPUsHXOOeAtJneyDQn7yogzft9BDIn7TNIAy"
+        )
+        
+        // Tracking
+        //PFAnalytics trackAppOpenedWithLaunchOptions
+        PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(launchOptions, nil)
+        
+        let eventDimensions = [
+            "project": "development",
+            "course" : "One Month iOS"
+        ]
+        // Send the dimensions to Parse along with the 'read' event
+        PFAnalytics.trackEventInBackground("read", dimensions: eventDimensions, nil)
+        
+//        var testObject = PFObject(className: "TestObject")
+//        testObject["foo"] = "bar"
+//        // testObject.setObject("bar", forKey: "foo")
+//        testObject.saveInBackgroundWithBlock {
+//            (success: Bool, error: NSError!) -> Void in
+//            if success {
+//                NSLog("Object created with id: \(testObject.objectId)")
+//            } else {
+//                NSLog("%@", error)
+//            }
+//        }
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -45,7 +93,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
 
 }
 
