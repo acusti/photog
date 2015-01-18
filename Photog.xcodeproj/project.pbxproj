@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		381EEC7B1A644008007AF94D /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381EEC7A1A644008007AF94D /* String+Extensions.swift */; };
 		385B34921A2848AD00CAE2DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385B34911A2848AD00CAE2DF /* AppDelegate.swift */; };
 		385B349C1A2848AD00CAE2DF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 385B349A1A2848AD00CAE2DF /* LaunchScreen.xib */; };
 		385B34A81A2848AE00CAE2DF /* PhotogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385B34A71A2848AE00CAE2DF /* PhotogTests.swift */; };
 		385B34B31A28500900CAE2DF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 385B34B21A28500900CAE2DF /* Images.xcassets */; };
 		389D1C071A341AC500EEF8F9 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389D1C051A341AC500EEF8F9 /* AuthViewController.swift */; };
 		389D1C081A341AC500EEF8F9 /* AuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 389D1C061A341AC500EEF8F9 /* AuthViewController.xib */; };
+		38FC64611A6B4BDE0076A865 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FC64601A6B4BDE0076A865 /* UIViewController+Extensions.swift */; };
+		38FC64641A6C3D1D0076A865 /* GenericAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FC64621A6C3D1D0076A865 /* GenericAlertViewController.swift */; };
+		38FC64651A6C3D1D0076A865 /* GenericAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38FC64631A6C3D1D0076A865 /* GenericAlertViewController.xib */; };
 		38FF9BBC1A296ED100E82277 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FF9BBB1A296ED100E82277 /* CoreLocation.framework */; };
 		38FF9BBE1A296EDD00E82277 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FF9BBD1A296EDD00E82277 /* StoreKit.framework */; };
 		38FF9BC01A296EE700E82277 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FF9BBF1A296EE700E82277 /* AudioToolbox.framework */; };
@@ -40,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		381EEC7A1A644008007AF94D /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		385B348C1A2848AD00CAE2DF /* Photog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		385B34901A2848AD00CAE2DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		385B34911A2848AD00CAE2DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +55,9 @@
 		385B34B21A28500900CAE2DF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		389D1C051A341AC500EEF8F9 /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		389D1C061A341AC500EEF8F9 /* AuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthViewController.xib; sourceTree = "<group>"; };
+		38FC64601A6B4BDE0076A865 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		38FC64621A6C3D1D0076A865 /* GenericAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericAlertViewController.swift; sourceTree = "<group>"; };
+		38FC64631A6C3D1D0076A865 /* GenericAlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GenericAlertViewController.xib; sourceTree = "<group>"; };
 		38FF9BBB1A296ED100E82277 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		38FF9BBD1A296EDD00E82277 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		38FF9BBF1A296EE700E82277 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -97,6 +105,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		381EEC791A643FEF007AF94D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				381EEC7A1A644008007AF94D /* String+Extensions.swift */,
+				38FC64601A6B4BDE0076A865 /* UIViewController+Extensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		385B34831A2848AD00CAE2DF = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +137,7 @@
 			children = (
 				385B34911A2848AD00CAE2DF /* AppDelegate.swift */,
 				389D1C091A341AD500EEF8F9 /* ViewControllers */,
+				381EEC791A643FEF007AF94D /* Extensions */,
 				385B34B21A28500900CAE2DF /* Images.xcassets */,
 				385B349A1A2848AD00CAE2DF /* LaunchScreen.xib */,
 				385B348F1A2848AD00CAE2DF /* Supporting Files */,
@@ -161,6 +179,8 @@
 				38FF9BDB1A2C1C2700E82277 /* StartViewController.xib */,
 				389D1C051A341AC500EEF8F9 /* AuthViewController.swift */,
 				389D1C061A341AC500EEF8F9 /* AuthViewController.xib */,
+				38FC64621A6C3D1D0076A865 /* GenericAlertViewController.swift */,
+				38FC64631A6C3D1D0076A865 /* GenericAlertViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -266,6 +286,7 @@
 			files = (
 				389D1C081A341AC500EEF8F9 /* AuthViewController.xib in Resources */,
 				385B349C1A2848AD00CAE2DF /* LaunchScreen.xib in Resources */,
+				38FC64651A6C3D1D0076A865 /* GenericAlertViewController.xib in Resources */,
 				385B34B31A28500900CAE2DF /* Images.xcassets in Resources */,
 				38FF9BDD1A2C1C2700E82277 /* StartViewController.xib in Resources */,
 			);
@@ -285,8 +306,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				381EEC7B1A644008007AF94D /* String+Extensions.swift in Sources */,
 				389D1C071A341AC500EEF8F9 /* AuthViewController.swift in Sources */,
 				385B34921A2848AD00CAE2DF /* AppDelegate.swift in Sources */,
+				38FC64611A6B4BDE0076A865 /* UIViewController+Extensions.swift in Sources */,
+				38FC64641A6C3D1D0076A865 /* GenericAlertViewController.swift in Sources */,
 				38FF9BDC1A2C1C2700E82277 /* StartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
