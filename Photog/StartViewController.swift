@@ -21,12 +21,12 @@ class StartViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func didTapLogIn(sender: AnyObject) {
+    @IBAction func didTapLogIn(sender: UIButton) {
         var viewController = AuthViewController(nibName: "AuthViewController", bundle: nil)
         self.navigationController?.pushViewController(viewController, animated: true)
     }
 
-    @IBAction func didTapSignUp(sender: AnyObject) {
+    @IBAction func didTapSignUp(sender: UIButton) {
         var viewController = AuthViewController(nibName: "AuthViewController", bundle: nil)
         self.navigationController?.pushViewController(viewController, animated: true)
     }
