@@ -61,7 +61,57 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        // Always test email address (user can change from email field to password without triggering this function)
+        if self.validateTextEmail() == false
+        {
+            self.textPassword.resignFirstResponder()
+            self.textEmail.becomeFirstResponder()
+            return false
+        }
+        // If this is the email field, continue to password
+        if textField == self.textEmail {
+            self.textEmail.resignFirstResponder()
+            self.textPassword.becomeFirstResponder()
+        }
+        else if textField == self.textPassword {
+            if self.validateTextPassword() == false
+            {
+                return false
+            }
+            self.textPassword.resignFirstResponder()
+            authenticate()
+        }
+        return true
+    }
+    
+    // Validation functions
+    // --------------------
+    func validateTextEmail() -> Bool {
+        var email = self.textEmail.text
+        if email.isEmpty == true || email.isEmailAddress() == false
+        {
+            return false
+        }
+        return true
+    }
 
+    func validateTextPassword() -> Bool {
+        var password = self.textPassword.text
+        if password.isEmpty {
+            return false
+        }
+        return true
+    }
+    
+    func authenticate()
+    {
+        var email    = self.textEmail.text
+        var password = self.textPassword.text
+                
+        // Otherwise, authenticate
+    }
+    
     /*
     // MARK: - Navigation
 
