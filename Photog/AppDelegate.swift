@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         self.setupParse(launchOptions)
-        
+        self.setupAppAppearance()
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
         var navigationController = UINavigationController()
@@ -70,6 +70,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                NSLog("%@", error)
 //            }
 //        }
+    }
+    
+    func setupAppAppearance() {
+        UIApplication.sharedApplication().statusBarStyle = .LightContent
+        
+        UINavigationBar.appearance().barTintColor        = UIColor.blackColor()
+        UINavigationBar.appearance().tintColor           = UIColor.whiteColor()
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor.whiteColor()]
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {
