@@ -17,6 +17,7 @@
 		38FC64611A6B4BDE0076A865 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FC64601A6B4BDE0076A865 /* UIViewController+Extensions.swift */; };
 		38FC64641A6C3D1D0076A865 /* GenericAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FC64621A6C3D1D0076A865 /* GenericAlertViewController.swift */; };
 		38FC64651A6C3D1D0076A865 /* GenericAlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38FC64631A6C3D1D0076A865 /* GenericAlertViewController.xib */; };
+		38FC64671A6CA8620076A865 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38FC64661A6CA8620076A865 /* TabBarController.swift */; };
 		38FF9BBC1A296ED100E82277 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FF9BBB1A296ED100E82277 /* CoreLocation.framework */; };
 		38FF9BBE1A296EDD00E82277 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FF9BBD1A296EDD00E82277 /* StoreKit.framework */; };
 		38FF9BC01A296EE700E82277 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FF9BBF1A296EE700E82277 /* AudioToolbox.framework */; };
@@ -58,6 +59,7 @@
 		38FC64601A6B4BDE0076A865 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		38FC64621A6C3D1D0076A865 /* GenericAlertViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericAlertViewController.swift; sourceTree = "<group>"; };
 		38FC64631A6C3D1D0076A865 /* GenericAlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GenericAlertViewController.xib; sourceTree = "<group>"; };
+		38FC64661A6CA8620076A865 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		38FF9BBB1A296ED100E82277 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		38FF9BBD1A296EDD00E82277 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		38FF9BBF1A296EE700E82277 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -181,6 +183,7 @@
 				389D1C061A341AC500EEF8F9 /* AuthViewController.xib */,
 				38FC64621A6C3D1D0076A865 /* GenericAlertViewController.swift */,
 				38FC64631A6C3D1D0076A865 /* GenericAlertViewController.xib */,
+				38FC64661A6CA8620076A865 /* TabBarController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				389D1C071A341AC500EEF8F9 /* AuthViewController.swift in Sources */,
 				385B34921A2848AD00CAE2DF /* AppDelegate.swift in Sources */,
 				38FC64611A6B4BDE0076A865 /* UIViewController+Extensions.swift in Sources */,
+				38FC64671A6CA8620076A865 /* TabBarController.swift in Sources */,
 				38FC64641A6C3D1D0076A865 /* GenericAlertViewController.swift in Sources */,
 				38FF9BDC1A2C1C2700E82277 /* StartViewController.swift in Sources */,
 			);

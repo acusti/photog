@@ -26,10 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if PFUser.currentUser() == nil {
             navigationController.viewControllers = [startViewController]
-        }
-        else {
-            // TODO: show UI for main app page
-            println("Why hello, user")
+        } else {
+            var tabBarController = TabBarController()
+            navigationController.viewControllers = [startViewController, tabBarController]
         }
 
         var viewController = UIViewController()
