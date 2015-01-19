@@ -26,17 +26,9 @@ extension UIViewController: UIPopoverPresentationControllerDelegate {
     
     // Popover text alert
     // ------------------
-    func presentAlertPopover(message: String, barButtonItem: UIBarButtonItem) {
+    func presentAlertPopover(message: String, anchor: UIView) {
         let viewController = GenericAlertViewController(nibName: "GenericAlertViewController", bundle: nil)
-        self.presentViewControllerAsPopover(viewController, barButtonItem: barButtonItem)
-        if let labelAlert = viewController.labelAlertText {
-            labelAlert.text = message
-        }
-    }
-
-    func presentAlertPopover(message: String, sourceView: UIView, sourceRect: CGRect) {
-        let viewController = GenericAlertViewController(nibName: "GenericAlertViewController", bundle: nil)
-        self.presentViewControllerAsPopover(viewController, sourceView: sourceView, sourceRect: sourceRect)
+        self.presentViewControllerAsPopover(viewController, anchor: anchor)
         if let labelAlert = viewController.labelAlertText {
             labelAlert.text = message
         }
@@ -44,7 +36,7 @@ extension UIViewController: UIPopoverPresentationControllerDelegate {
     
     // Popover presentation helpers
     // ----------------------------
-    func presentViewControllerAsPopover(viewController: UIViewController, barButtonItem: UIBarButtonItem) {
+    func presentViewControllerAsPopover(viewController: UIViewController, anchor: UIView) {
         if let presentedVC = self.presentedViewController {
             if presentedVC.nibName == viewController.nibName {
                 // The view is already being presented
@@ -54,31 +46,12 @@ extension UIViewController: UIPopoverPresentationControllerDelegate {
         // Specify presentation style first (makes the popoverPresentationController property available)
         viewController.modalPresentationStyle = .Popover
         let viewPresentationController = viewController.popoverPresentationController?
+        // Prep source rect
+        let sourceRectWidth = anchor.frame.width < 100 ? anchor.frame.width : 100
         if let presentationController = viewPresentationController {
             presentationController.delegate                 = self
-            presentationController.barButtonItem            = barButtonItem
-            presentationController.permittedArrowDirections = .Up
-        }
-        viewController.preferredContentSize = CGSize(width: 230, height: 110)
-        
-        self.presentViewController(viewController, animated: true, completion: nil)
-    }
-    
-    // TODO: Add optional final parameter to specify preferredContentSize
-    func presentViewControllerAsPopover(viewController: UIViewController, sourceView: UIView, sourceRect: CGRect) {
-        if let presentedVC = self.presentedViewController {
-            if presentedVC.nibName == viewController.nibName {
-                // The view is already being presented
-                return
-            }
-        }
-        // Specify presentation style first (makes the popoverPresentationController property available)
-        viewController.modalPresentationStyle = .Popover
-        let viewPresentationController = viewController.popoverPresentationController?
-        if let presentationController = viewPresentationController {
-            presentationController.delegate                 = self
-            presentationController.sourceView               = sourceView
-            presentationController.sourceRect               = sourceRect
+            presentationController.sourceView               = anchor
+            presentationController.sourceRect               = CGRectMake(0, 0, sourceRectWidth, anchor.frame.size.height)
             presentationController.permittedArrowDirections = .Up
         }
         viewController.preferredContentSize = CGSize(width: 230, height: 110)

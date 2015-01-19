@@ -95,7 +95,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         var email = self.textEmail.text
         if email.isEmpty == true || email.isEmailAddress() == false
         {
-            self.presentAlertPopover("Please make sure your email address is entered correctly.", sourceView: self.textEmail, sourceRect: CGRectMake(0, 0, 100, self.textEmail.frame.size.height))
+            self.presentAlertPopover("Please make sure your email address is entered correctly.", anchor: self.textEmail)
             return false
         }
         return true
@@ -104,7 +104,7 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
     func validateTextPassword() -> Bool {
         var password = self.textPassword.text
         if password.isEmpty {
-            self.presentAlertPopover("Please make sure to enter a valid password.", sourceView: self.textPassword, sourceRect: CGRectMake(0, 0, 100, self.textPassword.frame.size.height))
+            self.presentAlertPopover("Please make sure to enter a valid password.", anchor: self.textPassword)
             return false
         }
         return true
