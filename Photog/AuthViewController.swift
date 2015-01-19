@@ -128,9 +128,37 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
     }
     
     func logIn(email: String, password: String) {
+        PFUser.logInWithUsernameInBackground(email, password: password) {
+            (user: PFUser!, error: NSError!) -> Void in
+            
+            if user != nil {
+                println("log in success")
+            } else {
+                self.presentAlertModal("Unable to log in", message: "Wrong username or password.")
+            }
+        }
     }
     
     func signUp(email: String, password: String) {
+        var user      = PFUser()
+        user.username = email
+        user.email    = email
+        user.password = password
+        
+        user.signUpInBackgroundWithBlock() {
+            (succeeded: Bool!, error: NSError!) -> Void in
+            
+            if succeeded != nil && succeeded == true {
+                println("sign up success")
+            } else {
+                var alertMessage = "Failed to create an account"
+                if let errorString = error.userInfo?["error"] as? String {
+                    alertMessage += ": " + errorString
+                }
+                alertMessage += "."
+                self.presentAlertModal("Sorry", message: alertMessage)
+            }
+        }
     }
     
     /*
