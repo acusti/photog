@@ -10,7 +10,7 @@ import UIKit
 
 class AuthViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var textEmail: UITextField!
+    @IBOutlet weak var textEmail:    UITextField!
     @IBOutlet weak var textPassword: UITextField!
     
     // Other variables scoped to AuthViewController class
@@ -20,8 +20,6 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // Define layout to exclude nav bar at top of screen
         self.edgesForExtendedLayout = UIRectEdge.None
-        // Title
-        //self.navigationItem.title = "Log in"
         
         var emailImageView         = UIImageView(frame: CGRectMake(0, 0, 50, self.textEmail!.frame.size.height))
         emailImageView.image       = UIImage(named: "IconEmail")
