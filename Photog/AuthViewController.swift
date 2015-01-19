@@ -8,13 +8,19 @@
 
 import UIKit
 
+enum AuthMode {
+    case LogIn
+    case SignUp
+}
+
 class AuthViewController: UIViewController, UITextFieldDelegate {
 
+    // Variables scoped to AuthViewController class
+    var authMode: AuthMode = .LogIn
+    
     @IBOutlet weak var textEmail:    UITextField!
     @IBOutlet weak var textPassword: UITextField!
     
-    // Other variables scoped to AuthViewController class
-    // ...
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,6 +120,17 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
         var password = self.textPassword.text
                 
         // Otherwise, authenticate
+        if self.authMode == .LogIn {
+            self.logIn(email!, password: password!)
+        } else {
+            self.signUp(email!, password: password!)
+        }
+    }
+    
+    func logIn(email: String, password: String) {
+    }
+    
+    func signUp(email: String, password: String) {
     }
     
     /*
